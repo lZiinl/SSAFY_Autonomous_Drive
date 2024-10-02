@@ -1,0 +1,28 @@
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* 프레임 밖으로 넘치지 않도록 설정 */
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;      /* 중앙 정렬 */
+  }
+  
+  .imageCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;  /* 배경에 Canny Edge Detection 이미지 */
+    object-fit: cover;  /* 캔버스 크기 유지 */
+  }
+  
+  .threeDCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;  /* 3D 객체는 이미지 위에 렌더링 */
+    pointer-events: none;
+    width: 100%;  /* 크기를 프레임에 맞춤 */
+    height: 100%; /* 크기를 프레임에 맞춤 */
+  }
+  
